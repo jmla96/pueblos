@@ -1,0 +1,145 @@
+<ion-content [fullscreen]="true">
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="loading-container">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Cargando juego...</p>
+  </div>
+
+  <!-- Game Canvas -->
+  <canvas 
+    #canvas3D 
+    [style.display]="isLoading ? 'none' : 'block'"
+    [class.blurred]="showInstructions"
+    class="game-canvas">
+  </canvas>
+
+  <!-- Compact Navigation -->
+  <div class="compact-nav" [style.display]="isLoading ? 'none' : 'flex'" [class.blurred]="showInstructions">
+    <ion-button fill="clear" color="light" routerLink="/home">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" color="light" (click)="showInstructionsModal()">
+      <ion-icon name="help-circle"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Game UI Overlay -->
+  <div class="game-ui" [style.display]="isLoading ? 'none' : 'flex'" [class.blurred]="showInstructions">
+    <!-- Score and Stats -->
+    <div class="stats-panel">
+      <ion-chip [color]="getScoreColor()">
+        <ion-icon name="trophy-outline"></ion-icon>
+        <ion-label>{{ gameState.score }}</ion-label>
+      </ion-chip>
+      
+      <ion-chip [color]="getSpeedColor()">
+        <ion-icon name="speedometer-outline"></ion-icon>
+        <ion-label>{{ gameState.speed.toFixed(1) }}</ion-label>
+      </ion-chip>
+      
+      <ion-chip [color]="getLivesColor()">
+        <ion-icon name="heart"></ion-icon>
+        <ion-label>{{ gameState.lives }}</ion-label>
+      </ion-chip>
+    </div>
+
+    <!-- Game Controls -->
+    <div class="controls-panel" *ngIf="!gameState.isRunning && !isLoading">
+      <ion-button 
+        *ngIf="!gameState.isGameOver" 
+        (click)="startGame()" 
+        expand="block" 
+        size="large"
+        color="success">
+        <ion-icon name="play" slot="start"></ion-icon>
+        Iniciar Juego
+      </ion-button>
+      
+      <ion-button 
+        *ngIf="gameState.isGameOver" 
+        (click)="restartGame()" 
+        expand="block" 
+        size="large"
+        color="primary">
+        <ion-icon name="refresh" slot="start"></ion-icon>
+        Jugar de Nuevo
+      </ion-button>
+    </div>
+
+    <!-- Pause/Resume buttons when game is running -->
+    <div class="pause-controls" *ngIf="gameState.isRunning">
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="pauseGame()" color="warning">
+          <ion-icon name="pause"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div class="game-over-screen" *ngIf="gameState.isGameOver">
+      <div class="game-over-content">
+        <h2>¡Juego Terminado!</h2>
+        <p>Puntuación Final: <strong>{{ gameState.score }}</strong></p>
+        <p>Velocidad Máxima: <strong>{{ gameState.speed.toFixed(1) }}</strong></p>
+        
+        <ion-button (click)="restartGame()" expand="block" color="primary">
+          <ion-icon name="refresh" slot="start"></ion-icon>
+          Jugar de Nuevo
+        </ion-button>
+        
+        <ion-button routerLink="/home" expand="block" fill="outline" color="medium">
+          <ion-icon name="home" slot="start"></ion-icon>
+          Volver al Menú
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructions Modal -->
+  <ion-modal [isOpen]="showInstructions" (willDismiss)="hideInstructions()" class="instructions-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>🎮 Cómo Jugar</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="hideInstructions()" fill="clear">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content class="ion-padding">
+        <div class="instructions">
+          <h3>🎮 Cómo Jugar</h3>
+          
+          <div class="instruction-item">
+            <strong>🎯 Objetivo:</strong> Evita obstáculos rojos y recolecta monedas amarillas
+          </div>
+
+          <div class="instruction-item">
+            <strong>🖥️ PC:</strong> A/D o ←/→ = mover | W/Espacio/↑ = saltar
+          </div>
+
+          <div class="instruction-item">
+            <strong>📱 Móvil:</strong> Deslizar izq/der = mover | Deslizar arriba = saltar
+          </div>
+
+          <div class="instruction-item">
+            <strong>🏆 Puntos:</strong> +1 por distancia | +10 monedas | +50 powerups morados
+          </div>
+        </div>
+
+        <ion-button 
+          (click)="hideInstructions(); startGame()" 
+          expand="block" 
+          color="success" 
+          class="start-button">
+          <ion-icon name="play" slot="start"></ion-icon>
+          ¡Empezar a Jugar!
+        </ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

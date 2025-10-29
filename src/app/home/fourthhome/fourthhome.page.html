@@ -1,0 +1,232 @@
+<ion-header [translucent]="true" *ngIf="!gameState.isRunning">
+  <ion-toolbar>
+    <ion-title>Mountain Runner</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="showInstructionsModal()" fill="clear">
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="loading-container">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Cargando aventura en las montañas...</p>
+  </div>
+
+  <!-- Game Canvas -->
+  <canvas 
+    #canvas3D 
+    [style.display]="isLoading ? 'none' : 'block'"
+    class="game-canvas">
+  </canvas>
+
+  <!-- Game UI Overlay -->
+  <div class="game-ui" [style.display]="isLoading ? 'none' : 'flex'">
+    <!-- Stats Panel -->
+    <div class="stats-panel" *ngIf="!gameState.isRunning && !isLoading">
+      <div class="stats-row">
+        <ion-chip [color]="getScoreColor()">
+          <ion-icon name="trophy-outline"></ion-icon>
+          <ion-label>{{ gameState.score }}</ion-label>
+        </ion-chip>
+        
+        <ion-chip [color]="getDistanceColor()">
+          <ion-icon name="location-outline"></ion-icon>
+          <ion-label>{{ gameState.distance }}m</ion-label>
+        </ion-chip>
+      </div>
+      
+      <div class="stats-row">
+        <ion-chip [color]="getSpeedColor()">
+          <ion-icon name="speedometer-outline"></ion-icon>
+          <ion-label>{{ gameState.speed.toFixed(1) }}</ion-label>
+        </ion-chip>
+        
+        <ion-chip [color]="getLivesColor()">
+          <ion-icon name="heart"></ion-icon>
+          <ion-label>{{ gameState.lives }}</ion-label>
+        </ion-chip>
+      </div>
+      
+      <div class="stats-row" *ngIf="gameState.speed > 6">
+        <ion-chip [color]="getAltitudeColor()">
+          <ion-icon name="speedometer-outline"></ion-icon>
+          <ion-label>{{ gameState.speed.toFixed(1) }}x</ion-label>
+        </ion-chip>
+      </div>
+    </div>
+
+    <!-- Game Controls -->
+    <div class="controls-panel" *ngIf="!gameState.isRunning && !isLoading">
+      <ion-button 
+        *ngIf="!gameState.isGameOver" 
+        (click)="startGame()" 
+        expand="block" 
+        size="large"
+        color="success">
+        <ion-icon name="play" slot="start"></ion-icon>
+        Comenzar Aventura
+      </ion-button>
+      
+      <ion-button 
+        *ngIf="gameState.isGameOver" 
+        (click)="restartGame()" 
+        expand="block" 
+        size="large"
+        color="primary">
+        <ion-icon name="refresh" slot="start"></ion-icon>
+        Nueva Aventura
+      </ion-button>
+    </div>
+
+    <!-- Pause/Resume buttons when game is running -->
+    <div class="pause-controls" *ngIf="gameState.isRunning">
+      <ion-button 
+        (click)="pauseGame()" 
+        color="warning" 
+        size="small"
+        class="pause-button">
+        <ion-icon name="pause"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Mobile Touch Controls -->
+    <div class="mobile-controls" *ngIf="gameState.isRunning">
+      <!-- Jump Area (main touch area) -->
+      <div class="jump-area" (touchstart)="onJumpTouch($event)" (click)="onJumpTouch($event)">
+        <div class="jump-hint" *ngIf="!gameState.isRunning && !isLoading">
+          <ion-icon name="hand-right-outline"></ion-icon>
+          <span>Toca para saltar</span>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <!-- Game Over Screen -->
+    <div class="game-over-screen" *ngIf="gameState.isGameOver">
+      <div class="game-over-content">
+        <h2>¡Aventura Completada!</h2>
+        <div class="final-stats">
+          <div class="stat-item">
+            <ion-icon name="trophy" color="warning"></ion-icon>
+            <span>Puntuación: <strong>{{ gameState.score }}</strong></span>
+          </div>
+          <div class="stat-item">
+            <ion-icon name="location" color="primary"></ion-icon>
+            <span>Distancia: <strong>{{ gameState.distance }}m</strong></span>
+          </div>
+          <div class="stat-item">
+            <ion-icon name="speedometer" color="success"></ion-icon>
+            <span>Velocidad Máx: <strong>{{ gameState.speed.toFixed(1) }}</strong></span>
+          </div>
+        </div>
+        
+        <ion-button (click)="restartGame()" expand="block" color="primary">
+          <ion-icon name="refresh" slot="start"></ion-icon>
+          Nueva Aventura
+        </ion-button>
+        
+        <ion-button routerLink="/home" expand="block" fill="outline" color="medium">
+          <ion-icon name="home" slot="start"></ion-icon>
+          Volver al Pueblo
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructions Modal -->
+  <ion-modal [isOpen]="showInstructions" (willDismiss)="hideInstructions()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Aventura en las Montañas</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="hideInstructions()" fill="clear">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content class="ion-padding">
+        <div class="instructions">
+          <div class="game-preview">
+            <ion-icon name="mountain" size="large" color="success"></ion-icon>
+            <h3>¡Corre por las Montañas!</h3>
+            <p>Una aventura 2D side-scrolling en un mundo 3D low-poly lleno de montañas y desafíos.</p>
+          </div>
+
+          <div class="instruction-item">
+            <ion-icon name="flag" color="primary"></ion-icon>
+            <div>
+              <h4>Objetivo</h4>
+              <p>Corre lo más lejos posible por el paisaje montañoso, evitando obstáculos y recogiendo tesoros.</p>
+            </div>
+          </div>
+
+          <div class="instruction-item">
+            <ion-icon name="desktop" color="success"></ion-icon>
+            <div>
+              <h4>Controles PC</h4>
+              <p><strong>Espacio/W/Flecha Arriba:</strong> Saltar</p>
+              <p><strong>Enter:</strong> Iniciar/Reiniciar juego</p>
+            </div>
+          </div>
+
+          <div class="instruction-item">
+            <ion-icon name="phone-portrait" color="warning"></ion-icon>
+            <div>
+              <h4>Controles Móvil</h4>
+              <p><strong>Tocar pantalla:</strong> Saltar</p>
+              <p><strong>Tocar (juego pausado):</strong> Iniciar</p>
+            </div>
+          </div>
+
+          <div class="instruction-item">
+            <ion-icon name="warning" color="danger"></ion-icon>
+            <div>
+              <h4>Obstáculos</h4>
+              <p><strong>Rocas:</strong> Salta por encima</p>
+              <p><strong>Árboles:</strong> Demasiado altos para saltar</p>
+              <p><strong>Pájaros:</strong> Vuelan a diferentes alturas</p>
+            </div>
+          </div>
+
+          <div class="instruction-item">
+            <ion-icon name="gift" color="tertiary"></ion-icon>
+            <div>
+              <h4>Coleccionables</h4>
+              <p><strong>Monedas Doradas:</strong> +25 puntos</p>
+              <p><strong>Corazones:</strong> +1 vida y +50 puntos</p>
+            </div>
+          </div>
+
+          <div class="instruction-item">
+            <ion-icon name="analytics" color="secondary"></ion-icon>
+            <div>
+              <h4>Progresión</h4>
+              <p>La velocidad aumenta gradualmente. Cada 100m de distancia, ¡la aventura se vuelve más intensa!</p>
+            </div>
+          </div>
+        </div>
+
+        <ion-button 
+          (click)="hideInstructions(); startGame()" 
+          expand="block" 
+          color="success" 
+          class="start-button">
+          <ion-icon name="play" slot="start"></ion-icon>
+          ¡Comenzar Aventura!
+        </ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

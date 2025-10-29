@@ -1,0 +1,13 @@
+{
+    "arquitectura": [ 
+      {
+        "name": "casa0",
+        "name_glb": "house",
+        "rotation": "0, -3.070459349403862, 0",
+        "position": "0, -2, 0",
+        "scaling": "0.1 , 0.1, 0.1",
+        "animations": []
+      }
+    ]
+  }
+  

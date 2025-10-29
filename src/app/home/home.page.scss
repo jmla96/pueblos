@@ -1,0 +1,211 @@
+#renderCanvas {
+  width: 100%;
+  height: 100vh;
+}
+
+.optionsGame {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  z-index: 15; /* Por encima del joystick pero debajo del menú */
+}
+
+.optionsGame .menu {
+  margin-left: 20px;
+}
+
+.optionsGame .run { 
+  margin-right: 20px;
+  float: right; 
+}
+.run:hover, .menu:hover {
+  background-color: #4bacd2 !important;
+}
+.run:hover {
+  overflow: visible;
+}
+.runOptionsLeft {
+  width: 10%;
+  height: 60vh;
+  position: fixed;
+  top: 20vh;
+  right: 20px;
+  background-color: #3498db;
+  padding: 10px;
+  border-radius: 20px; 
+  font-size: 30px;
+  z-index: 20; /* Por encima del joystick */
+}
+
+.runOptionsRight {
+  width: 10%;
+  height: 60vh;
+  position: fixed;
+  top: 20vh;
+  left: 20px;
+  background-color: #3498db;
+  padding: 10px;
+  border-radius: 20px; 
+  font-size: 30px;
+  z-index: 20; /* Por encima del joystick */
+}
+#listMeshes {
+  position: fixed;
+  top: 4rem;
+  left: 8%;
+  background-color: #b7e2ff;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 30px;
+  width: 80%;
+  height: 60vh;
+  z-index: 30; /* Por encima del joystick y opciones */
+}
+#listMeshes img {
+  width: 80px;
+}
+.secondOption {
+  background-color: #4bacd2 !important;
+}
+.menuDiv {
+  position: absolute;
+  top: 20px;
+  min-width: 300px;
+  max-width: 500px;
+  width: 70%;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 50; /* Asegurar que esté por encima del joystick */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  z-index: 45; /* Asegurar que el contenedor del menú esté por encima */
+}
+
+.btn { 
+  font-size: 30px;
+  background-color: rgb(255, 173, 32);
+  border-radius: 50px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  padding: 5px; 
+  padding-top: 10px; 
+}
+
+.close {
+  margin-left: 90%;
+}
+
+.optionMenu {
+  padding: 7px;
+  font-size: 26px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgb(202, 165, 0);
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.undo {
+  position: fixed;
+  left: 60%;
+  height: 50px;
+  width: 50px;
+  bottom: 6rem;
+}
+.redo {
+  position: fixed;
+  left: 42%;
+  height: 50px;
+  width: 50px;
+  bottom: 6rem;
+}
+.down {
+  position: fixed;
+  left: 51%;
+  height: 50px;
+  width: 50px;
+  bottom: 3rem;
+}
+.up {
+  position: fixed;
+  left: 51%;
+  height: 50px;
+  width: 50px;
+  bottom: 6rem;
+}
+.forward {
+  position: fixed;
+  left: 55%;
+  height: 50px;
+  width: 50px;
+  bottom: 4.5rem;
+}
+.back {
+  position: fixed;
+  left: 47%;
+  height: 50px;
+  width: 50px;
+  bottom: 4.5rem;
+}
+.outline {
+  position: fixed;
+  left: 60%;
+  height: 50px;
+  width: 50px;
+  bottom: 3rem;
+}
+#minimap-container {
+  position: absolute;
+  bottom: 20px; /* Margen desde la parte inferior */
+  right: 20px; /* Margen desde la parte derecha */
+  width: 150px; /* Ancho del minimapa */
+  height: 150px; /* Alto del minimapa */
+  border-radius: 50%; /* Hacerlo redondo */
+  overflow: hidden; /* Ocultar contenido fuera del borde redondo */
+  border: 2px solid white; /* Borde blanco opcional */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  z-index: 10; /* Asegurarse de que esté encima de otros elementos */
+}
+.flyMode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #4bacd2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,468 @@
+{
+  "arquitectura": [ 
+    {
+      "name": "casa_7",
+      "name_glb": "casa_7",
+      "rotation": "-1.937968394109316e-16, 1.5166016141541325, 3.141592653589793",
+      "position": "22.786224365234375, -501, 18.737689971923828",
+      "scaling": "1.0000002904036362, -1, 1.0000002904036362",
+      "animations": []
+    },
+    {
+      "name": "casa_7_2",
+      "name_glb": "casa_7_2",
+      "rotation": "-3.7282108427629784e-16, 0.005863856058624782, 3.141592653589793",
+      "position": "3.7705750465393066, -501, 19.020315170288086",
+      "scaling": "0.9999999666133597, -1, 0.9999999666133597",
+      "animations": []
+    },
+    {
+      "name": "casa_7_3",
+      "name_glb": "casa_7_3",
+      "rotation": "0, 0.5, 0",
+      "position": "0, -501, 100",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_7_4",
+      "name_glb": "casa_7_4",
+      "rotation": "0, 0.2, 0",
+      "position": "100, -501, 100",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_7_5",
+      "name_glb": "casa_7_5",
+      "rotation": "8.441165440677011e-26, 2.941592657067845, 3.141592653589793",
+      "position": "49.905033111572266, -501, 69.57425689697266",
+      "scaling": "1.0000000189294767, -1, 1.0000000189294767",
+      "animations": []
+    },
+    {
+      "name": "tree2",
+      "name_glb": "tree2",
+      "rotation": "0, 0, 0",
+      "position": "50, -501, 200",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "tree2",
+      "name_glb": "tree2",
+      "rotation": "0, 0.3, 0",
+      "position": "70, -501, 210",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "personaje_1",
+      "name_glb": "personaje_1",
+      "rotation": "0, 1.5, 0",
+      "position": "80, -501, 220",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "personaje_2",
+      "name_glb": "personaje_2",
+      "rotation": "0, 0.7, 0",
+      "position": "60, -501, 230",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "pavimento_1",
+      "name_glb": "pavimento_1",
+      "rotation": "0, 0, 0",
+      "position": "50, -501, 45",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "anden",
+      "name_glb": "anden",
+      "rotation": "-6.461922164690488e-39, 3.141592653589793, 3.141592653589793",
+      "position": "50, -503.7720947265625, 10",
+      "scaling": "1, -1, 1",
+      "animations": []
+    },
+    {
+      "name": "casa_7",
+      "name_glb": "casa_7",
+      "rotation": "-1.3721108695073447e-17, -3.1285188301895723, 3.141592653589793",
+      "position": "22.2928409576416, -501, 8.052459532300487e-16",
+      "scaling": "1.0000002265859749, -1, 1.0000002265859749",
+      "animations": []
+    },
+    {
+      "name": "lamparacalle1",
+      "name_glb": "lamparacalle1",
+      "rotation": "0, 0, 0",
+      "position": "50, -501, -10",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "montana_5",
+      "name_glb": "montana_5",
+      "rotation": "-2.6915292195527074e-9, -3.0415926501430506, -3.116150184220824",
+      "position": "-63.14271926879883, -518.8341674804688, -113.56417846679688",
+      "scaling": "1.0000001135986902, -1.0000000485845961, 1.0000000122318888",
+      "animations": []
+    },
+    {
+      "name": "montana2",
+      "name_glb": "montana2",
+      "rotation": "-8.441165440677011e-26, -2.941592657067845, 3.141592653589793",
+      "position": "35.509559631347656, -501, 522.283447265625",
+      "scaling": "1.0000000189294767, -1, 1.0000000189294767",
+      "animations": []
+    },
+    {
+      "name": "montana1",
+      "name_glb": "montana1",
+      "rotation": "-8.441165440677011e-26, -2.941592657067845, 3.141592653589793",
+      "position": "-5.755427360534668, -501, 272.115234375",
+      "scaling": "1.0000000189294767, -1, 1.0000000189294767",
+      "animations": []
+    },
+    {
+      "name": "ave_1",
+      "name_glb": "ave_1",
+      "rotation": "0, 1.57, 0",
+      "position": "250, -290, 180",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_8_3",
+      "name_glb": "casa_8_3",
+      "rotation": "0, -3.5, 0",
+      "position": "9.000000000000002, -501, -50.73288486245161",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_8",
+      "name_glb": "casa_8",
+      "rotation": "-3.169673094899782e-17, 1.249529316062946, -3.141592653589793",
+      "position": "27.49574089050293, -501, -44.0036506652832",
+      "scaling": "1.0000001761599693, -1, 1.0000001761599693",
+      "animations": []
+    },
+    {
+      "name": "casa_8_1",
+      "name_glb": "casa_8_1",
+      "rotation": "0, 0, 0",
+      "position": "-0.46320316195487976, -501, -0.37242960929870605",
+      "scaling": "0.9999997465135261, -1, 0.9999997465135261",
+      "animations": []
+    },
+    {
+      "name": "tree2",
+      "name_glb": "tree2",
+      "rotation": "0, 0, 0",
+      "position": "6.201111316680908, -501, 1.180591106414795",
+      "scaling": "1, -1, 1",
+      "animations": []
+    },
+    {
+      "name": "tree2",
+      "name_glb": "tree2",
+      "rotation": "0, 0, 0",
+      "position": "-77.63478240966798, -501, -22.165082024541654",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "tree2",
+      "name_glb": "tree2",
+      "rotation": "0, 0, 0",
+      "position": "108.6052200317382, -501, 29.448628849187216",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_1",
+      "name_glb": "tree2",
+      "rotation": "0, 0.5, 0",
+      "position": "-80, -501, 150",
+      "scaling": "1.2, 1, -1.1",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_2",
+      "name_glb": "tree2",
+      "rotation": "0, 1.8, 0",
+      "position": "85, -501, 320",
+      "scaling": "0.9, 1, -0.8",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_3",
+      "name_glb": "tree2",
+      "rotation": "0, 2.3, 0",
+      "position": "-65, -501, 480",
+      "scaling": "1.1, 1, -1.3",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_4",
+      "name_glb": "tree2",
+      "rotation": "0, 0.8, 0",
+      "position": "90, -501, 650",
+      "scaling": "0.8, 1, -0.9",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_5",
+      "name_glb": "tree2",
+      "rotation": "0, 1.2, 0",
+      "position": "-70, -501, 820",
+      "scaling": "1.3, 1, -1.0",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_6",
+      "name_glb": "tree2",
+      "rotation": "0, 2.8, 0",
+      "position": "75, -501, 990",
+      "scaling": "1.0, 1, -1.2",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_7",
+      "name_glb": "tree2",
+      "rotation": "0, 0.3, 0",
+      "position": "-85, -501, 1160",
+      "scaling": "0.95, 1, -0.85",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_8",
+      "name_glb": "tree2",
+      "rotation": "0, 1.9, 0",
+      "position": "80, -501, 1330",
+      "scaling": "1.15, 1, -1.05",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_9",
+      "name_glb": "tree2",
+      "rotation": "0, 2.5, 0",
+      "position": "-60, -501, 1500",
+      "scaling": "0.9, 1, -1.1",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_10",
+      "name_glb": "tree2",
+      "rotation": "0, 0.7, 0",
+      "position": "95, -501, 1670",
+      "scaling": "1.25, 1, -0.9",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_11",
+      "name_glb": "tree2",
+      "rotation": "0, 1.4, 0",
+      "position": "-75, -501, 1840",
+      "scaling": "1.0, 1, -1.3",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_12",
+      "name_glb": "tree2",
+      "rotation": "0, 3.0, 0",
+      "position": "70, -501, 2010",
+      "scaling": "0.85, 1, -0.8",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_13",
+      "name_glb": "tree2",
+      "rotation": "0, 0.6, 0",
+      "position": "-90, -501, 2180",
+      "scaling": "1.2, 1, -1.1",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_14",
+      "name_glb": "tree2",
+      "rotation": "0, 2.1, 0",
+      "position": "85, -501, 2350",
+      "scaling": "0.9, 1, -0.95",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_15",
+      "name_glb": "tree2",
+      "rotation": "0, 1.7, 0",
+      "position": "-65, -501, 2520",
+      "scaling": "1.1, 1, -1.2",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_16",
+      "name_glb": "tree2",
+      "rotation": "0, 0.9, 0",
+      "position": "90, -501, 2690",
+      "scaling": "1.3, 1, -0.85",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_17",
+      "name_glb": "tree2",
+      "rotation": "0, 2.4, 0",
+      "position": "-80, -501, 2860",
+      "scaling": "0.8, 1, -1.15",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_18",
+      "name_glb": "tree2",
+      "rotation": "0, 1.1, 0",
+      "position": "75, -501, 3030",
+      "scaling": "1.05, 1, -1.0",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_19",
+      "name_glb": "tree2",
+      "rotation": "0, 2.7, 0",
+      "position": "-70, -501, 3200",
+      "scaling": "0.95, 1, -0.9",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_20",
+      "name_glb": "tree2",
+      "rotation": "0, 0.4, 0",
+      "position": "85, -501, 3370",
+      "scaling": "1.2, 1, -1.25",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_21",
+      "name_glb": "tree2",
+      "rotation": "0, 1.6, 0",
+      "position": "-85, -501, 3540",
+      "scaling": "0.85, 1, -0.8",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_22",
+      "name_glb": "tree2",
+      "rotation": "0, 2.9, 0",
+      "position": "80, -501, 3710",
+      "scaling": "1.15, 1, -1.1",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_23",
+      "name_glb": "tree2",
+      "rotation": "0, 0.2, 0",
+      "position": "-60, -501, 3880",
+      "scaling": "1.0, 1, -0.95",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_24",
+      "name_glb": "tree2",
+      "rotation": "0, 1.8, 0",
+      "position": "95, -501, 4050",
+      "scaling": "0.9, 1, -1.3",
+      "animations": []
+    },
+    {
+      "name": "tree2_forest_25",
+      "name_glb": "tree2",
+      "rotation": "0, 2.6, 0",
+      "position": "-75, -501, 4220",
+      "scaling": "1.25, 1, -0.85",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_1",
+      "name_glb": "casa_7",
+      "rotation": "0, 0.5, 0",
+      "position": "-45, -501, 380",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_2",
+      "name_glb": "casa_8",
+      "rotation": "0, 1.2, 0",
+      "position": "55, -501, 580",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_3",
+      "name_glb": "casa_7_2",
+      "rotation": "0, 2.1, 0",
+      "position": "-40, -501, 750",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_4",
+      "name_glb": "casa_8_1",
+      "rotation": "0, 0.8, 0",
+      "position": "60, -501, 920",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_5",
+      "name_glb": "casa_7_3",
+      "rotation": "0, 1.7, 0",
+      "position": "-50, -501, 1090",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_6",
+      "name_glb": "casa_8_3",
+      "rotation": "0, 0.3, 0",
+      "position": "45, -501, 1260",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_7",
+      "name_glb": "casa_7_4",
+      "rotation": "0, 2.5, 0",
+      "position": "-35, -501, 1430",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_8",
+      "name_glb": "casa_7_5",
+      "rotation": "0, 1.1, 0",
+      "position": "65, -501, 1600",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_9",
+      "name_glb": "casa_7",
+      "rotation": "0, 0.7, 0",
+      "position": "-55, -501, 1770",
+      "scaling": "1, 1, -1",
+      "animations": []
+    },
+    {
+      "name": "casa_pueblo_10",
+      "name_glb": "casa_8",
+      "rotation": "0, 1.9, 0",
+      "position": "50, -501, 1940",
+      "scaling": "1, 1, -1",
+      "animations": []
+    }
+  ]
+}

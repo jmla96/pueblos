@@ -1,0 +1,106 @@
+<ion-content>
+  <canvas
+    #renderCanvas
+    id="sceneTwoCanvas"
+    touch-action="none"
+  ></canvas>
+
+  <div
+    class="player-hud"
+    *ngIf="isSceneReady"
+  >
+    <div class="player-hud__label">Salud</div>
+    <div class="player-hud__bar">
+      <div
+        class="player-hud__bar-fill"
+        [style.width.%]="playerHealthPercent"
+      ></div>
+    </div>
+    <div class="player-hud__value">
+      {{ playerHealth | number: '1.0-0' }} / {{ playerMaxHealth | number: '1.0-0' }}
+    </div>
+    <div
+      class="player-hud__powerups"
+      *ngIf="activePowerUps.length > 0"
+    >
+      <div
+        class="player-hud__powerup"
+        *ngFor="let effect of activePowerUps"
+      >
+        <span
+          class="player-hud__powerup-dot"
+          [ngClass]="'powerup-' + effect.type"
+        ></span>
+        <span class="player-hud__powerup-label">{{ powerUpLabel(effect.type) }}</span>
+        <span class="player-hud__powerup-timer">{{ effect.remaining | number: '1.0-0' }}s</span>
+      </div>
+    </div>
+  </div>
+
+  <ion-fab
+    class="menu-fab"
+    slot="fixed"
+    vertical="top"
+    horizontal="end"
+  >
+    <ion-fab-button
+      size="small"
+      color="light"
+      [disabled]="!isSceneReady || gameState === 'gameOver'"
+      (click)="onTogglePause()"
+    >
+      <ion-icon [name]="gameState === 'paused' ? 'play' : 'pause'"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div
+    #joystickZone
+    id="joystick-container"
+    [hidden]="!isSceneReady || gameState !== 'running'"
+  ></div>
+
+  <div class="loading-overlay" *ngIf="!isSceneReady">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Preparando escena…</p>
+  </div>
+
+  <ion-fab
+    class="shoot-fab"
+    slot="fixed"
+    vertical="bottom"
+    horizontal="end"
+  >
+    <ion-fab-button
+      color="danger"
+      [disabled]="!isSceneReady || gameState !== 'running'"
+      (click)="onShoot()"
+    >
+      <ion-icon name="flash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div
+    class="menu-overlay"
+    *ngIf="isSceneReady && gameState === 'paused'"
+  >
+    <div class="menu-card">
+      <h2>Pausa</h2>
+      <p>El juego está detenido.</p>
+      <ion-button expand="block" color="success" (click)="onResume()">Reanudar</ion-button>
+      <ion-button expand="block" color="warning" (click)="onRestart()">Reiniciar</ion-button>
+      <ion-button expand="block" color="medium" (click)="onExit()">Salir</ion-button>
+    </div>
+  </div>
+
+  <div
+    class="menu-overlay"
+    *ngIf="isSceneReady && gameState === 'gameOver'"
+  >
+    <div class="menu-card">
+      <h2>Partida terminada</h2>
+      <p>Has caído en combate. ¿Qué deseas hacer?</p>
+      <ion-button expand="block" color="success" (click)="onRestart()">Reintentar</ion-button>
+      <ion-button expand="block" color="medium" (click)="onExit()">Salir</ion-button>
+    </div>
+  </div>
+</ion-content>

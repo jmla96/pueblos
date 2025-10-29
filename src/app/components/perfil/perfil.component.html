@@ -1,0 +1,75 @@
+
+  
+<ion-content *ngIf="user.name.length != 0">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="6" size-lg="4" class="m-t-100">
+        <div class="viewer">
+          <babylon-viewer source="../../../assets/modelos3D/personaje_model.glb"></babylon-viewer> 
+        </div>
+        <div class="card bg-secondary"> 
+          <div class="card bg-primary" style="z-index: 2;position: relative;">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam maxime.
+            <ion-button><ion-icon name="chevron-forward-circle-outline"></ion-icon></ion-button>
+          </div>
+        </div> 
+      </ion-col>
+      <ion-col size-sm="6" size-lg="4">
+        <div class="viewer_2">
+          <babylon-viewer source="../../../assets/modelos3D/personaje_model.glb"></babylon-viewer> 
+        </div>
+        <div class="card bg-secondary m-t-100"> 
+          <div class="card bg-primary" style="z-index: 2;position: relative;">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam maxime.
+            <ion-button><ion-icon name="chevron-forward-circle-outline"></ion-icon></ion-button>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <swiper-container slides-per-view="3" loop="true"> 
+    <swiper-slide>
+      <div style="width: 100%;text-align: center;padding: 40px;">
+        <img src="../../../assets/icon/favicon.png" width="90%"> 
+        <span>Text</span> 
+      </div>
+    </swiper-slide>  
+    <swiper-slide>
+      <div style="width: 100%;text-align: center;padding: 40px;">
+        <img src="../../../assets/icon/favicon.png" width="90%"> 
+        <span>Text</span> 
+      </div>
+    </swiper-slide>  
+    <swiper-slide>
+      <div style="width: 100%;text-align: center;padding: 40px;">
+        <img src="../../../assets/icon/favicon.png" width="90%"> 
+        <span>Text</span> 
+      </div>
+    </swiper-slide>  
+    <swiper-slide>
+      <div style="width: 100%;text-align: center;padding: 40px;">
+        <img src="../../../assets/icon/favicon.png" width="90%"> 
+        <span>Text</span> 
+      </div>
+    </swiper-slide>  
+    <swiper-slide>
+      <div style="width: 100%;text-align: center;padding: 40px;">
+        <img src="../../../assets/icon/favicon.png" width="90%"> 
+        <span>Text</span> 
+      </div>
+    </swiper-slide>  
+    <swiper-slide>
+      <div style="width: 100%;text-align: center;padding: 40px;">
+        <img src="../../../assets/icon/favicon.png" width="90%"> 
+        <span>Text</span> 
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
+<div *ngIf="user.name.length === 0">
+  <p>
+    Para acceder a las funciones del perfil debes iniciar sesión.
+  </p>
+</div>
+<ion-button (click)="login()"><ion-icon name="alert-circle-outline"></ion-icon> Iniciar sesión</ion-button>

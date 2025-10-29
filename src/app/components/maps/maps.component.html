@@ -1,0 +1,56 @@
+
+<swiper-container #swiperRef slides-per-view="3" loop="true" [centeredSlides]="true" (swiperslidechange)="slideChanged($event)"> 
+  <swiper-slide *ngFor="let slide of sliders;let i = index" id="slide_{{i}}">
+    <div style="width: 100%;text-align: center;">
+      <div class="mapInfo" (click)="showInfo('slide_'+i, slide.id)">
+        <img src="{{slide.img}}" width="100%">  
+        <span class="good">{{slide.text}}</span>
+      </div>
+      <div class="infoMap">  
+        <div class="btn" (click)="showInfo('slide_'+i, slide.id)">x</div>
+        <div class="contentInfo">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, libero quo? Vero porro iusto, cupiditate necessitatibus sunt fugiat beatae ipsum quas dolorem ullam temporibus sequi maiores placeat corrupti ratione laboriosam.
+        </div>
+        <div class="optionsInfo" *ngIf="slide.id != 'finca'">
+          <ion-button (click)="moreInfo()"><ion-icon name="alert-circle-outline"></ion-icon></ion-button>
+          <ion-button [click]="history(slide.history)"><ion-icon name="library-outline"></ion-icon></ion-button>
+          <ion-button (click)="go(slide.id, slide.type)"><ion-icon name="chevron-forward-circle-outline"></ion-icon></ion-button>
+        </div>
+        <div class="optionsInfo" *ngIf="slide.id === 'finca'">
+          <ion-button (click)="moreInfo()"><ion-icon name="alert-circle-outline"></ion-icon></ion-button>
+          <ion-button [click]="history(slide.history)">Explorar</ion-button>
+          <br>
+          <ion-button (click)="crearFinca()" *ngIf="fincaId === undefined || fincaId.length === 0">Crear {{fincaId}}</ion-button>
+          <ion-button (click)="go(fincaId, 'finca')" *ngIf="fincaId.length > 0">Ir a finca</ion-button>
+        </div>
+      </div>
+    </div>
+  </swiper-slide>  
+</swiper-container> 
+
+<div id="createFinca">
+  <ion-content>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Agregar Finca</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-content>
+      <form (ngSubmit)="onSubmit()" *ngIf="user.isLogin">
+        <ion-item style="display: flex;">
+          <ion-label>Nombre de la Finca</ion-label>
+          <input id="farmName" value="none"> 
+          <ion-button (click)="generateRandomName()">Aleatorio</ion-button>
+        </ion-item>
+        <ion-button expand="full" type="submit">Iniciar</ion-button>
+      </form>
+        
+      <div id="message"></div>
+      <ion-button (click)='login()' id="btnMessage" *ngIf="!user.isLogin">Iniciar sesión</ion-button>
+    </ion-content>
+  </ion-content>  
+</div>
+
+<div class="btnSlides" (click)="prevSlide()"> </div>
+<div class="btnSlides2" (click)="nextSlide()"> </div> 

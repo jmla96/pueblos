@@ -1,0 +1,283 @@
+.game-canvas {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 30%, #98FB98 30%, #98FB98 100%);
+  transition: filter 0.3s ease;
+  
+  &.blurred {
+    filter: blur(5px);
+  }
+}
+
+.compact-nav {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  pointer-events: none;
+  transition: filter 0.3s ease;
+  
+  &.blurred {
+    filter: blur(3px);
+  }
+  
+  ion-button {
+    pointer-events: auto;
+    --background: rgba(0, 0, 0, 0.5);
+    --border-radius: 50%;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+  ion-spinner {
+    margin-bottom: 16px;
+    transform: scale(1.5);
+  }
+  
+  p {
+    color: var(--ion-color-primary);
+    font-weight: 500;
+  }
+}
+
+.game-ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: filter 0.3s ease;
+  
+  &.blurred {
+    filter: blur(3px);
+  }
+  
+  * {
+    pointer-events: auto;
+  }
+}
+
+.stats-panel {
+  position: absolute;
+  top: 80px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  ion-chip {
+    --background: rgba(255, 255, 255, 0.9);
+    --color: var(--ion-color-dark);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    
+    ion-icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+.controls-panel {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 280px;
+  max-width: 90vw;
+  
+  ion-button {
+    --border-radius: 12px;
+    --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    height: 56px;
+  }
+}
+
+.pause-controls {
+  ion-fab {
+    margin: 20px;
+  }
+  
+  ion-fab-button {
+    --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.game-over-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.game-over-content {
+  background: var(--ion-color-light);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  max-width: 400px;
+  width: 90vw;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  h2 {
+    color: var(--ion-color-primary);
+    margin-bottom: 16px;
+    font-size: 28px;
+  }
+  
+  p {
+    color: var(--ion-color-dark);
+    margin-bottom: 8px;
+    font-size: 16px;
+    
+    strong {
+      color: var(--ion-color-primary);
+    }
+  }
+  
+  ion-button {
+    margin-top: 16px;
+    --border-radius: 12px;
+    font-weight: 600;
+    
+    &:first-of-type {
+      margin-top: 24px;
+    }
+  }
+}
+
+.instructions-modal {
+  --backdrop-opacity: 0.4;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  
+  ion-content {
+    --background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
+  
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: white;
+  }
+}
+
+.instructions {
+  .instruction-item {
+    display: block;
+    margin-bottom: 16px;
+    padding: 12px;
+    background: rgba(var(--ion-color-light-rgb), 0.1);
+    border-radius: 8px;
+    line-height: 1.5;
+    
+    strong {
+      color: var(--ion-color-primary);
+      font-weight: 600;
+    }
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--ion-color-primary);
+  }
+}
+
+.start-button {
+  margin-top: 32px;
+  --border-radius: 12px;
+  font-weight: 600;
+  height: 56px;
+}
+
+// Mobile optimizations
+@media (max-width: 768px) {
+  .stats-panel {
+    top: 50px;
+    left: 12px;
+    
+    ion-chip {
+      font-size: 14px;
+    }
+  }
+  
+  .controls-panel {
+    width: 240px;
+  }
+  
+  .game-over-content {
+    padding: 24px;
+    
+    h2 {
+      font-size: 24px;
+    }
+    
+    p {
+      font-size: 14px;
+    }
+  }
+  
+  .instructions .instruction-item {
+    margin-bottom: 20px;
+    
+    ion-icon {
+      font-size: 20px;
+      margin-right: 12px;
+    }
+    
+    div {
+      h4 {
+        font-size: 16px;
+      }
+      
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// Landscape mobile optimizations
+@media (max-height: 500px) and (orientation: landscape) {
+  .stats-panel {
+    flex-direction: row;
+    top: 8px;
+    left: 8px;
+    gap: 6px;
+    
+    ion-chip {
+      font-size: 12px;
+    }
+  }
+  
+  .controls-panel {
+    bottom: 45%;
+    
+    ion-button {
+      height: 48px;
+      font-size: 14px;
+    }
+  }
+}

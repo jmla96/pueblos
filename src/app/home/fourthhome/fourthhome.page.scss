@@ -1,0 +1,205 @@
+.game-canvas {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 40%, #90EE90 40%, #8FBC8F 70%, #654321 100%);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.game-ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stats-panel {
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 8px;
+}
+
+.controls-panel {
+  position: absolute;
+  bottom: 45%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 300px;
+  max-width: 90vw;
+}
+
+.game-over-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.game-over-content {
+  background: var(--ion-color-light);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  max-width: 450px;
+  width: 90vw;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.instructions-modal {
+  --background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.instructions-content {
+  padding: 24px;
+  text-align: center;
+}
+
+// Mobile Controls Styles
+.pause-controls {
+  position: absolute;
+  top: 60px;
+  right: 16px;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.pause-button {
+  --border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+}
+
+.mobile-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.jump-area {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  right: 60px;
+  bottom: 100px;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Visual feedback for touch area
+  &:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.jump-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  font-size: 18px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+  
+  ion-icon {
+    font-size: 32px;
+  }
+}
+
+.side-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.control-btn {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: white;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+  
+  ion-icon {
+    font-size: 24px;
+  }
+  
+  &:active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0.95);
+  }
+}
+
+.left-btn {
+  border-color: rgba(255, 193, 7, 0.5);
+  
+  &:active {
+    background: rgba(255, 193, 7, 0.3);
+    border-color: rgba(255, 193, 7, 0.8);
+  }
+}
+
+.right-btn {
+  border-color: rgba(40, 167, 69, 0.5);
+  
+  &:active {
+    background: rgba(40, 167, 69, 0.3);
+    border-color: rgba(40, 167, 69, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.7; transform: scale(1); }
+}

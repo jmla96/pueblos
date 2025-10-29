@@ -1,0 +1,12 @@
+<swiper-container #swiperRef slides-per-view="3" loop="true" [centeredSlides]="true" (swiperslidechange)="slideChanged($event)">
+  <swiper-slide *ngFor="let game of minigames; let i = index" id="slide_{{i}}">
+    <div style="width: 100%;text-align: center;">
+      <div class="mapInfo" (click)="playGame(game.id)">
+        <img [src]="game.img" width="100%">
+        <span class="good">{{game.name}}</span>
+      </div> 
+    </div>
+  </swiper-slide>
+</swiper-container>
+<div class="btnSlides" (click)="prevSlide()"> </div>
+<div class="btnSlides2" (click)="nextSlide()"> </div>

@@ -1,0 +1,30 @@
+{
+  "arquitectura": [
+    { "name": "casa0", "name_glb": "house", "rotation": "0, 2.1, 0", "position": "-50.0, -100.0, -20.0", "scaling": "2.2, 2.2, 2", "animations": [] },
+    { "name": "casa1", "name_glb": "house", "rotation": "0, -1.5, 0", "position": "-40.0, -100.0, -50.0", "scaling": "2.3, 2.3, 2.3", "animations": [] },
+    { "name": "casa2", "name_glb": "house", "rotation": "0, 1.8, 0", "position": "-30.0, -100.0, 10.0", "scaling": "2, 2.1, 2", "animations": [] },
+    { "name": "casa3", "name_glb": "house", "rotation": "0, 0.5, 0", "position": "-70.0, -100.0, -40.0", "scaling": "2.4, 2.4, 2.4", "animations": [] },
+    { "name": "casa4", "name_glb": "house", "rotation": "0, -1.2, 0", "position": "10.0, -100.0, 40.0", "scaling": "2, 2, 2", "animations": [] },
+    { "name": "casa5", "name_glb": "house", "rotation": "0, 0.7, 0", "position": "20.0, -100.0, -30.0", "scaling": "2.1, 2.2, 2", "animations": [] },
+    { "name": "casa6", "name_glb": "house", "rotation": "0, -0.8, 0", "position": "-80.0, -100.0, -80.0", "scaling": "2, 2, 2", "animations": [] },
+    { "name": "casa7", "name_glb": "house", "rotation": "0, 3.0, 0", "position": "50.0, -100.0, 30.0", "scaling": "2.2, 2.3, 2.1", "animations": [] },
+    { "name": "casa8", "name_glb": "house", "rotation": "0, -1.7, 0", "position": "70.0, -100.0, -40.0", "scaling": "2.5, 2.5, 2", "animations": [] },
+    { "name": "casa9", "name_glb": "house", "rotation": "0, 0.2, 0", "position": "-120.0, -100.0, -60.0", "scaling": "2.4, 2, 2.3", "animations": [] },
+
+    { "name": "arbol0", "rotation": "0, 0.8, 0", "position": "50.0, -100.0, -60.0", "scaling": "1.9, 2.1, 2", "name_glb": "tree1", "animations": [] },
+    { "name": "arbol1", "rotation": "0, -1.0, 0", "position": "30.0, -100.0, 15.0", "scaling": "2.2, 2, 2", "name_glb": "tree1", "animations": [] },
+    { "name": "arbol2", "rotation": "0, 1.3, 0", "position": "-10.0, -100.0, -60.0", "scaling": "1.8, 1.8, 2", "name_glb": "tree1", "animations": [] },
+    { "name": "arbol3", "rotation": "0, 0.2, 0", "position": "-35.0, -100.0, -40.0", "scaling": "2.3, 2, 2.3", "name_glb": "tree1", "animations": [] },
+    { "name": "arbol4", "rotation": "0, -1.5, 0", "position": "40.0, -100.0, 50.0", "scaling": "2, 2.1, 2", "name_glb": "tree1", "animations": [] },
+    { "name": "arbol5", "rotation": "0, 1.0, 0", "position": "-70.0, -100.0, 70.0", "scaling": "1.9, 2, 1.8", "name_glb": "tree1", "animations": [] },
+    { "name": "arbol6", "rotation": "0, 0.4, 0", "position": "80.0, -100.0, -90.0", "scaling": "2.1, 2.1, 2.1", "name_glb": "tree1", "animations": [] },
+
+    { "name": "pasto0", "rotation": "0.3, 0.4, 0", "position": "25.0, -100.0, -20.0", "scaling": "2, 2, 2", "name_glb": "grass", "animations": [] },
+    { "name": "pasto1", "rotation": "0, 0.5, 0", "position": "-20.0, -100.0, -40.0", "scaling": "2.1, 2, 2", "name_glb": "grass", "animations": [] },
+    { "name": "pasto2", "rotation": "0.2, -0.6, 0", "position": "15.0, -100.0, -50.0", "scaling": "2.2, 2.2, 2", "name_glb": "grass", "animations": [] },
+    { "name": "pasto3", "rotation": "0.1, 0.8, 0", "position": "-15.0, -100.0, 30.0", "scaling": "1.8, 2, 2", "name_glb": "grass", "animations": [] },
+    { "name": "pasto4", "rotation": "0.4, 0.6, 0", "position": "-45.0, -100.0, -15.0", "scaling": "2.1, 2.1, 2", "name_glb": "grass", "animations": [] },
+    { "name": "pasto5", "rotation": "0.6, -0.2, 0", "position": "60.0, -100.0, -50.0", "scaling": "2, 2.2, 2.1", "name_glb": "grass", "animations": [] },
+    { "name": "pasto6", "rotation": "0.1, 0.7, 0", "position": "80.0, -100.0, 30.0", "scaling": "2.3, 2, 2", "name_glb": "grass", "animations": [] }
+  ]
+}

@@ -1,0 +1,147 @@
+.menuInicio {
+    width: 100%;
+    position: fixed;
+    background-color: #ffcc40;
+    display: flex;
+    z-index: 1;
+    bottom: 0px;
+    justify-content: space-around;
+    height: 10vh; 
+  }
+  .menuInicio div {
+    float: left;
+    padding: 20px;
+    font-size: 30px;
+    width: 20%;
+  }
+  
+  .viewer_pj {
+      position: absolute;
+      width: 105% !important;
+      margin-top: -4rem;
+      margin-left: -30%;
+  }
+  .floatingDivs {
+    position: fixed;
+    bottom: 12vh; 
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  .floatingDivs .spaceDivs {
+    display: flex;
+    width: 120px;
+    height: 180px;
+    flex-direction: column;
+  }
+  .principal {
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .secundario {
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .floatingDivs div {
+    align-items: center;
+    justify-content: center;
+    background-color: #ffcc40;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+    cursor: pointer;
+    float: left;
+    display: flex;
+  }
+  .floatingDivs .principal div {
+    width: 120px;
+    height: 120px;
+    float:left;
+  }
+  .shopcar {
+    position: absolute;
+    width: 85% !important;
+    margin-top: -10rem;
+    margin-right: -100%;
+    transform: rotate(30deg);
+  }
+  .shopcar img{  
+    width: 100% !important;  
+  }
+  .mapa {
+    position: relative;
+    width: 20% !important; 
+  }
+  app-perfil, app-shop, app-maps, app-games, app-config, app-mapa-v2 {
+    width: 100%;height: 90%;position: absolute;z-index: 1;
+    top: 0px;
+    background-color: #333;
+  }
+
+  app-auth {
+    width: 100%;height: 100%;position: absolute;z-index: 3;
+    top: 0px;
+    background-color: white;
+  }
+
+  .welcome {
+    position: absolute;
+    width: 80%;
+    height: 60vh;
+    z-index: 3;
+    border-radius: 10px;
+    padding: 25px;
+    top: 20vh;
+    background-color: aliceblue;
+    left: 10%;
+    color: black;
+  }
+
+  p {
+    font-size: 18px;
+  }
+  .profile-info {
+    display: flex;align-items: center;
+    padding: 20px;
+  }
+  .imgWorld1 {
+    position: absolute;
+    width: 100% !important;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .imgWorld2 {
+    position: absolute;
+    width: 100% !important;
+    bottom: 0;
+    z-index: 1;
+    left: 1px; 
+    animation:  rotateWorld 20s linear infinite;
+    transform-origin: center center;
+  } 
+
+  @keyframes rotateWorld {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .imgWorld3 {
+    position: absolute;
+    width: 60% !important;
+    bottom: 1rem;
+    z-index: 2;
+    left: 17px;
+  }

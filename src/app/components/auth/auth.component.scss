@@ -1,0 +1,64 @@
+h1 {
+    color: black;
+    font-size: 6rem;
+}
+.small, .good { 
+    color: black;
+}
+.google {
+    width: 13rem;
+}
+.contentAuth {
+    display: flex;
+    height: 100vh; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.cloud1, .cloud2, .cloud3 {
+    position: absolute;
+    z-index: 2;
+}
+.cloud1 {
+    position: absolute;
+    animation: translateSideBySide2 37s infinite;
+}
+.cloud2 { 
+    animation: translateSideBySide 45s infinite;
+}
+.cloud3 { 
+    animation: translateSideBySide2 44s infinite;
+}
+
+@keyframes translateSideBySide {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: -20%;
+    }
+}
+@keyframes translateSideBySide2 {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -20%;
+    }
+} 
+
+.cloud1 {
+    top: 3vh;
+}
+.cloud2 {
+    top: 33vh;
+}
+.cloud3 {
+    top: 69vh;
+}
+.contentAuth {
+    background: white;
+} 
